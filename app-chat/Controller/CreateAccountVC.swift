@@ -1,5 +1,5 @@
 //
-//  LoginVC.swift
+//  CreateAccountVC.swift
 //  app-chat
 //
 //  Created by mateusz on 11.10.2017.
@@ -8,18 +8,15 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class CreateAccountVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
-    
+        
     @IBAction func closePressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    //close btn action
+        performSegue(withIdentifier: UNWIND, sender: nil)    } //back to main VC
     
 }
