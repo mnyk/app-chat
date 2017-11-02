@@ -10,8 +10,7 @@ import UIKit
 
 class ChannelVC: UIViewController {
     
-    // outlets
-    
+    // outlets 
     
 
     @IBOutlet weak var loginBtn: UIButton!
