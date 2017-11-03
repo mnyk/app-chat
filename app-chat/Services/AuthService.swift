@@ -73,9 +73,30 @@ class AuthService {
     
     
     
-    func loginUser() {
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
         
         
+        let lowerCaseEmail = email.lowercased()
+        
+        
+        let header = [
+            "Content-Type": "application/json; charset=utf-8"
+        ]
+        
+        let body : [String: Any] = [
+            "email": lowerCaseEmail,
+            "password": password
+        ]
+        
+        Alamofire.request(URL_LOGIN, method: .post, parameters: body, encoding: JSONEncoding.default
+            , headers: header).responseJSON{ (response) in
+                if response.result.error == nil {
+                    completion(true)
+                } else {
+                    completion(false)
+                    debugPrint(response.result.error as Any)
+                }
+        }
     }
     
     
