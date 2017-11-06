@@ -16,6 +16,8 @@ UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    //Variables
+    var avatarType = AvatarType.dark
     //Data source
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +28,7 @@ UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "avatarCell", for: indexPath) as? AvatarCell{
+            cell.configureCell(index: indexPath.item, type: avatarType)
             return cell
         } else {
             return AvatarCell()
