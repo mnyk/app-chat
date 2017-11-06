@@ -26,7 +26,6 @@ class CreateAccountVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
     }
     //Avatar checked
     override func viewDidAppear(_ animated: Bool) {
@@ -38,7 +37,6 @@ class CreateAccountVC: UIViewController {
             }
         }
     }
-
     @IBAction func createAccountPressed(_ sender: Any) {
         spinner.isHidden = false
         spinner.startAnimating()
@@ -56,15 +54,14 @@ class CreateAccountVC: UIViewController {
                                 self.spinner.isHidden = true
                                 self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
+                                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                             }
                             })
                     }
                     })
-                
             }
         }
     }
-    
     @IBAction func pickAvatarPressed(_ sender: Any) {
         performSegue(withIdentifier: TO_AVATAR_PICKER, sender: nil)
     }
@@ -77,8 +74,6 @@ class CreateAccountVC: UIViewController {
         UIView.animate(withDuration: 0.2) {
         self.userImg.backgroundColor = self.bgColor
         }
-
-        
     }
     @IBAction func closePressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)    } //back to main VC
@@ -87,7 +82,7 @@ class CreateAccountVC: UIViewController {
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
         passTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
-        //
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
         view.addGestureRecognizer(tap)
     }
