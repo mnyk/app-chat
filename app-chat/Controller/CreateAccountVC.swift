@@ -87,6 +87,13 @@ class CreateAccountVC: UIViewController {
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
         emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
         passTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
+        //
+        let tap = UITapGestureRecognizer(target: self, action: #selector(CreateAccountVC.handleTap))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap() {
+        view.endEditing(true)
     }
     
 }
