@@ -498,7 +498,7 @@
                                     <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8cl-Ng-BK6">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="avatarCell" id="8cl-Ng-BK6" customClass="AvatarCell" customModule="app_chat" customModuleProvider="target">
                                         <rect key="frame" x="20" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -516,6 +516,9 @@
                                             <constraint firstAttribute="trailing" secondItem="NEW-rN-PKI" secondAttribute="trailing" constant="10" id="UbA-OH-CmN"/>
                                             <constraint firstAttribute="bottom" secondItem="NEW-rN-PKI" secondAttribute="bottom" constant="10" id="kQc-lx-NYv"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="avatarImg" destination="NEW-rN-PKI" id="zWM-Eq-RWk"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
