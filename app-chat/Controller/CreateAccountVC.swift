@@ -24,6 +24,7 @@ class CreateAccountVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         
     }
     //Avatar checked
@@ -69,11 +70,16 @@ class CreateAccountVC: UIViewController {
         let b  = CGFloat(arc4random_uniform(255)) / 255
         
         bgColor = UIColor(red: r, green: g, blue: b, alpha: 1)
-        self.userImg.backgroundColor = bgColor
+        UIView.animate(withDuration: 0.2) {
+        self.userImg.backgroundColor = self.bgColor
+        }
 
         
     }
     @IBAction func closePressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)    } //back to main VC
+    func setupView(){
+        usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
+    }
     
 }
