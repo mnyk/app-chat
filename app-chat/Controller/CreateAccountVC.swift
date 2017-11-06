@@ -16,6 +16,7 @@ class CreateAccountVC: UIViewController {
     @IBOutlet weak var emailTxt: UITextField!
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     // Variables
     var avatarName = "profileDefault"
@@ -39,8 +40,10 @@ class CreateAccountVC: UIViewController {
     }
 
     @IBAction func createAccountPressed(_ sender: Any) {
+        spinner.isHidden = false
+        spinner.startAnimating()
+        
         guard let name = usernameTxt.text , usernameTxt.text != "" else { return }
-
         guard let email = emailTxt.text , emailTxt.text != "" else { return }
         guard let pass = passTxt.text , passTxt.text != "" else { return }
         AuthService.instance.registerUser(email: email, password: pass)
@@ -50,7 +53,8 @@ class CreateAccountVC: UIViewController {
                     if success {
                         AuthService.instance.createUser(name: name, email: email, avatarName: self.avatarName, avatarColor: self.avatarColor, completion: { (success) in
                             if success {
-                                print(UserDataService.instance.name, UserDataService.instance.avatarName)
+                                self.spinner.isHidden = true
+                                self.spinner.stopAnimating()
                                 self.performSegue(withIdentifier: UNWIND, sender: nil)
                             }
                             })
@@ -79,7 +83,10 @@ class CreateAccountVC: UIViewController {
     @IBAction func closePressed(_ sender: Any) {
         performSegue(withIdentifier: UNWIND, sender: nil)    } //back to main VC
     func setupView(){
+        spinner.isHidden = true
         usernameTxt.attributedPlaceholder = NSAttributedString(string: "username", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
+        emailTxt.attributedPlaceholder = NSAttributedString(string: "email", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
+        passTxt.attributedPlaceholder = NSAttributedString(string: "password", attributes: [NSAttributedStringKey.foregroundColor:chattityPurplePlaceholder])
     }
     
 }
