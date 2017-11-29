@@ -17,6 +17,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="app_chat" customModuleProvider="target">
             <connections>
+                <outlet property="bgView" destination="dNY-8V-jyb" id="nwX-TF-brp"/>
+                <outlet property="profileImg" destination="dn2-bW-3Rg" id="VgP-Wf-3Xz"/>
+                <outlet property="userEmail" destination="WGt-sz-dUU" id="PEM-c7-PP5"/>
+                <outlet property="userName" destination="gAY-Me-vso" id="eq9-Et-lYy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,6 +39,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQi-Yx-ljT">
                             <rect key="frame" x="299" y="8" width="28" height="28"/>
                             <state key="normal" image="closeButton"/>
+                            <connections>
+                                <action selector="closeModalPressed:" destination="-1" eventType="touchUpInside" id="X7H-JK-60J"/>
+                            </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u0w-Nk-Zgm">
                             <rect key="frame" x="75" y="44" width="185" height="242.5"/>
@@ -72,6 +79,9 @@
                             <state key="normal" title="Logout">
                                 <color key="titleColor" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="logoutPressed:" destination="-1" eventType="touchUpInside" id="ks5-sP-t1y"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
