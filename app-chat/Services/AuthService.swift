@@ -156,4 +156,8 @@ class AuthService {
         
     }
     
+    func findUserByEmail(completion: @escaping CompletionHandler){
+        Alamofire.request("\(URL_USER_BY_EMAIL)")
+    }
+    
 }

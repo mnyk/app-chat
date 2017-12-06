@@ -45,7 +45,7 @@
                             </connections>
                         </button>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="xS6-PG-MoL">
-                            <rect key="frame" x="92" y="25" width="153" height="250.5"/>
+                            <rect key="frame" x="91" y="25" width="153" height="250.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCO-Sx-XwR">
                                     <rect key="frame" x="0.0" y="0.0" width="153" height="33.5"/>
