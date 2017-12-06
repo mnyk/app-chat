@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,7 +88,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#general" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FAZ-HI-3ul">
-                                                    <rect key="frame" x="44" y="12" width="65.5" height="20"/>
+                                                    <rect key="frame" x="51" y="12" width="65.5" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -192,6 +192,9 @@
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="QGS-dc-l9R" eventType="touchUpInside" id="Moq-BG-pj4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Loc-GB-abJ">
                                 <rect key="frame" x="62" y="319" width="250" height="30"/>
@@ -254,6 +257,10 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="tDl-0R-EfR">
+                                <rect key="frame" x="169" y="215" width="37" height="37"/>
+                                <color key="color" red="0.25882352939999997" green="0.3294117647" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -264,14 +271,19 @@
                             <constraint firstItem="Ldv-KR-s6P" firstAttribute="top" secondItem="hcT-ZU-tI1" secondAttribute="bottom" constant="8" id="MBi-bm-BMR"/>
                             <constraint firstItem="NTt-4X-l41" firstAttribute="centerX" secondItem="WjP-XH-hgJ" secondAttribute="centerX" id="Mn7-BC-I55"/>
                             <constraint firstItem="hcT-ZU-tI1" firstAttribute="top" secondItem="NTt-4X-l41" secondAttribute="bottom" constant="72" id="R3V-VI-QKj"/>
+                            <constraint firstItem="tDl-0R-EfR" firstAttribute="centerY" secondItem="WjP-XH-hgJ" secondAttribute="centerY" constant="-100" id="UN2-mf-AeE"/>
                             <constraint firstItem="hcT-ZU-tI1" firstAttribute="centerX" secondItem="WjP-XH-hgJ" secondAttribute="centerX" id="V05-Yz-dHO"/>
                             <constraint firstItem="Ldv-KR-s6P" firstAttribute="leading" secondItem="bSc-GH-4wq" secondAttribute="leading" constant="62" id="fBO-C8-JLs"/>
+                            <constraint firstItem="tDl-0R-EfR" firstAttribute="centerX" secondItem="WjP-XH-hgJ" secondAttribute="centerX" id="fMU-LE-IUS"/>
                             <constraint firstItem="bSc-GH-4wq" firstAttribute="trailing" secondItem="Ldv-KR-s6P" secondAttribute="trailing" constant="63" id="lpd-NF-Cva"/>
                             <constraint firstItem="bSc-GH-4wq" firstAttribute="bottom" secondItem="Loc-GB-abJ" secondAttribute="bottom" constant="318" id="nZ5-am-yL9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bSc-GH-4wq"/>
                     </view>
                     <connections>
+                        <outlet property="passwordTxt" destination="EBi-lm-m4k" id="JIc-Oo-NCX"/>
+                        <outlet property="spinner" destination="tDl-0R-EfR" id="D6o-QT-7BR"/>
+                        <outlet property="usernameTxt" destination="iyq-2v-kdT" id="RI0-fV-dUM"/>
                         <segue destination="McS-y1-jx5" kind="show" identifier="toCreateAccount" id="NeA-81-oGB"/>
                     </connections>
                 </viewController>
